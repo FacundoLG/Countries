@@ -3,9 +3,10 @@
         "src/*"
     ],
     "compilerOptions": {
+        "plugins": [{ "name": "typescript-plugin-css-modules" }],
         "target": "es5",
         "jsx": "react-jsx",
         "allowSyntheticDefaultImports": true,
-        "allowUmdGlobalAccess": true
+        "allowUmdGlobalAccess": true,
     }
 }
