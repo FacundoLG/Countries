@@ -4,7 +4,8 @@
     ],
     "compilerOptions": {
         "target": "es5",
-        "jsx": "react",
-        "allowSyntheticDefaultImports": true
+        "jsx": "react-jsx",
+        "allowSyntheticDefaultImports": true,
+        "allowUmdGlobalAccess": true
     }
 }
