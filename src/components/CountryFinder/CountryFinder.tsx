@@ -1,21 +1,15 @@
-import {FC} from "react"
+import React from 'react'
 import styles from "./countryfinder.module.css"
-interface Props {
-  SendText?: () => void,
-  placeHolder: string
+import DropSelector from '../DropSelector/DropSelector'
+import SearchImput from '../SearchImput/SearchImput'
+import {FiSearch} from "react-icons/fi"
+const CountryFinder = () => {
+    return (
+        <div className={styles.Container}>
+           <SearchImput Icon={<FiSearch/>}/>
+           <DropSelector/> 
+        </div>
+    )
 }
 
-const CountryFinder:FC<Props> = ({SendText, placeHolder}) => {
-  return (
-    <div className={styles.Container}>
-      <i>Lupa</i>
-      <input type="text" placeholder={placeHolder} />
-    </div>
-  );
-};
-
-export default CountryFinder;
-
-CountryFinder.defaultProps = {
-  placeHolder: "type something..."
-}
+export default CountryFinder

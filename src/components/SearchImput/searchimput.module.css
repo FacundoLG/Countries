@@ -1,0 +1,26 @@
+.Container {
+  display: flex;
+  align-items: center;
+  width: min-content;
+  height: 25px;
+  padding: var(--space-1);
+  border: solid 1px var(--third-color);
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px rgba(45, 66, 99, 0.25);
+}
+.Container i {
+  color: var(--third-color);
+  display: flex;
+  font-size: 20px;
+}
+
+.Container input {
+  width: 200px;
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  color: var(--secondary-color);
+  outline: none;
+  margin: 0 0 0 10px;
+  font-weight: 200;
+}

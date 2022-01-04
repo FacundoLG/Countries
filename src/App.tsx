@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import CountryFinder from "./components/CountryFinder/CountryFinder"
+import Home from "./pages/Home.jsx"
 const App:FC = () => (
   <div>
-    <CountryFinder placeHolder='Search for a country' SendText={() => { console.log()}}/>
+    <Home/>
   </div>
 );
 

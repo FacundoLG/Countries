@@ -11,10 +11,10 @@ module.exports = (argx, env) => {
   return {
     entry: "./src/index.tsx",
     output: {
-      filename: "index.js",
+      filename: "index_[hash].js",
       path: path.resolve(__dirname, "dist"),
     },
-    resolve: { extensions: [".js", ".jsx", ".ts", ".tsx", ".css"] },
+    resolve: { extensions: [".js", ".jsx", ".ts", ".tsx"] },
     plugins: [
       new HtmlWebpackPlugin({
         template: path.resolve(__dirname, "src/public", "index.html"),
@@ -43,14 +43,9 @@ module.exports = (argx, env) => {
           },
         },
         {
-          test: /\.css$/i,
-          use: [
-            "style-loader",
-            {
-              loader: "css-loader",
-              options: { modules: true, importLoaders: 1 },
-            },
-          ],
+          test: /\.css$/,
+          exclude: /node_modules/,
+          use: ["style-loader", { loader: "css-loader" }],
         },
       ],
     },
