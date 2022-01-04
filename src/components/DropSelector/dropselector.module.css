@@ -1,12 +1,36 @@
 .Container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  position: relative;
   width: min-content;
-  height: 25px;
-  border-radius: 5px;
-  box-shadow: 1px 1px 1px 1px rgba(45, 66, 99, 0.25);
 }
-.InputContainer {
+.DropBox {
   display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: 1px;
+  top: 36px;
+  flex-direction: column;
+  position: absolute;
+  background-color: var(--primary-color);
+  text-align: center;
+}
+.Drop {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  border-radius: 0 0 5px 5px;
+  border: solid var(--third-color) 1px;
+  border-top: none;
+}
+.Drop li {
+  padding: var(--space-1);
+  border-top: solid var(--third-color) 1px;
+  font-size: 13px;
+  font-weight: 400;
+}
+.Drop > li:hover {
+  background-color: var(--hover-color);
+  transition: var(--transition-fast);
+  cursor: pointer;
 }
