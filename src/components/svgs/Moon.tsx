@@ -6,6 +6,7 @@ interface SunInterface {
 const Moon:FC<SunInterface> = ({size, onClick}) => {
   return (
     <svg
+      data-testid="moon"
       onClick={onClick}
       width={size || 22}
       height={(size ||22) + 1}
@@ -92,9 +93,9 @@ const Moon:FC<SunInterface> = ({size, onClick}) => {
           width="10.6954"
           height="8.15088"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -132,9 +133,9 @@ const Moon:FC<SunInterface> = ({size, onClick}) => {
           width="6.6479"
           height="8.2392"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -172,9 +173,9 @@ const Moon:FC<SunInterface> = ({size, onClick}) => {
           width="10.6014"
           height="10.8249"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -212,9 +213,9 @@ const Moon:FC<SunInterface> = ({size, onClick}) => {
           width="9.46573"
           height="8.43497"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -252,9 +253,9 @@ const Moon:FC<SunInterface> = ({size, onClick}) => {
           width="7.10281"
           height="8.23737"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
