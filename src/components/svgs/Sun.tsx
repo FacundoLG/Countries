@@ -7,7 +7,7 @@ const Sun:FC<SunInterface> = ({size,onClick}) => {
   return (
     <svg
       onClick={onClick}
-      width={size || 24}
+      width={(size || 24) + 1}
       height={size || 24}
       viewBox="0 0 35 34"
       fill="none"

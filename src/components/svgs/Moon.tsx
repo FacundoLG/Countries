@@ -8,7 +8,7 @@ const Moon:FC<SunInterface> = ({size, onClick}) => {
     <svg
       onClick={onClick}
       width={size || 22}
-      height={size ||22}
+      height={(size ||22) + 1}
       viewBox="0 0 31 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
