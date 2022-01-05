@@ -12,7 +12,7 @@ describe("CountryFinder Test",() => {
         const component = render(<CountryFinder placeHolder={CountryFinderProps.placeHolder}/>)
         component.getByPlaceholderText(CountryFinderProps.placeHolder)
     })
-    test('without placeholder param',() => {
+    test('Without placeholder param',() => {
         const component = render(<CountryFinder />)
         component.getByPlaceholderText(CountryFinderProps.defaultPlaceHolder)
     })

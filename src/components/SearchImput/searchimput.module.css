@@ -7,6 +7,8 @@
   border: solid 1px var(--third-color);
   border-radius: 5px;
   box-shadow: 1px 1px 1px 1px rgba(45, 66, 99, 0.25);
+  z-index: 1;
+  background-color: var(--primary-color);
 }
 .Container i {
   color: var(--third-color);
