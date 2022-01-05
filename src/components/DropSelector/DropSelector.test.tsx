@@ -1,5 +1,11 @@
 import React from "react"
-
+import DropSelector from "./DropSelector"
+import {render} from "@testing-library/react"
 describe("Drop Selector Test", () => {
-    test("no test", () => {})
+    test("Options exists", () => {
+        const selector = render(<DropSelector  options={["Global","America","Asia"]}/>)
+        selector.getByText("Asia")
+        selector.getByText("Global")
+        selector.getByText("America")
+    })
 })

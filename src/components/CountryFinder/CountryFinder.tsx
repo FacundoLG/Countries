@@ -5,6 +5,7 @@ import SearchImput from '../SearchImput/SearchImput'
 import {FiSearch} from "react-icons/fi"
 import ThemeMode from '../ThemeMode/ThemeMode'
 const CountryFinder = () => {
+    const Continents = ["Gobal","America","Europe","Africa","Asia","Australia"]
     const [clickID,setClickID] = useState()
     useEffect(() => {
         document.addEventListener("click",sendClickID)
@@ -22,7 +23,7 @@ const CountryFinder = () => {
             <SearchImput Icon={<FiSearch/>}/>
             <div className={styles.RSide}>
               <ThemeMode/>
-              <DropSelector clickData={clickID}/> 
+              <DropSelector options={Continents} clickData={clickID}/> 
             </div>
         </div>
     )

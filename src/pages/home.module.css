@@ -1,5 +1,6 @@
 .Container {
   display: flex;
-  padding: 20px;
+  flex-direction: column;
+  padding: var(--space-3) var(--space-4);
   height: 100%;
 }

@@ -4,12 +4,13 @@ import SearchImput from "../SearchImput/SearchImput"
 import { FC, useEffect, useState } from "react"
 
 interface DropProps {
-  clickData: String
+  clickData?: String,
+  options: Array<string>
 }
 
-const DropSelector:FC<DropProps> = ({clickData}) => {
-  const [dropState,setDropState] = useState(false)
-  const [actieOption,setActiveOption] = useState("Global")  
+const DropSelector:FC<DropProps> = ({clickData,options}) => {
+  const [dropState,setDropState] = useState<boolean>(false)
+  const [actieOption,setActiveOption] = useState<string>("Global")  
   useEffect(() => {
       if(clickData == "Drop"){
         setDropState(!dropState)
@@ -22,12 +23,10 @@ const DropSelector:FC<DropProps> = ({clickData}) => {
              <SearchImput readOnly={true} value={actieOption}  Icon={<RiArrowDropDownLine id={dropState? "" : "Drop"} className={styles.DropIcon}/>}/>
            <div className={`${styles.DropBox} ${dropState? "" : styles.HideDropBox}`}> 
             <ul className={styles.Drop}>
-                <li>Global</li>
-                <li>America</li>
-                <li>Africa</li>
-                <li>Europe</li>
-                <li>Asia</li>
-                <li>Australia</li>
+                {options.map((name,i) => (
+                  <li key={name + "_" + i} onClick={() => {setActiveOption(name)}}>{name}</li>
+                ))}
+
               </ul>
             </div>
         </div>

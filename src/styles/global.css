@@ -1,18 +1,20 @@
 :root {
   --primary-color: #191919;
-  --secondary-color: #ffffff;
+  --secondary-color: #f0f0f0;
   --third-color: #2d4263;
-  --hover-color: rgba(125, 125, 125, 0.2);
+  --hover-color: rgba(125, 125, 125, 0.14);
   --space-1: 0.4rem;
   --space-2: 0.8rem;
   --space-3: 1.1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
   --transition-fast: 200ms;
   --transition-medium: 350ms;
   --transition-slow: 600ms;
   transition: 200ms;
 }
 [data-theme="light"]:root {
-  --primary-color: #ffffff;
+  --primary-color: #f0f0f0;
   --secondary-color: #191919;
   transition: 200ms;
 }
