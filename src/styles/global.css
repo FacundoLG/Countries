@@ -16,6 +16,7 @@
 [data-theme="light"]:root {
   --primary-color: #f0f0f0;
   --secondary-color: #191919;
+  --hover-color: #ffffff;
   transition: 200ms;
 }
 * {
@@ -28,4 +29,24 @@ html {
   height: 100%;
   background-color: var(--primary-color);
   color: var(--secondary-color);
+}
+/* width */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--primary-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--third-color);
 }
