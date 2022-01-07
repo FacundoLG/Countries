@@ -1,8 +1,8 @@
 .Container {
   display: flex;
   flex-direction: column;
-  height: 240px;
-  width: 260px;
+  height: 260px;
+  max-width: 260px;
   background-color: var(--hover-color);
   margin: var(--space-1);
   border-radius: 2px;

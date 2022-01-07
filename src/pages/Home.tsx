@@ -4,11 +4,17 @@ import FlagCard from "../components/FlagCard/FlagCard";
 import { FC, useEffect, useState } from "react";
 import ThemeMode from "../components/ThemeMode/ThemeMode";
 import {getCountries} from "../services/getCountries.js"
-
+import Skeleton from "../components/Skeleton/Skeleton";
 const Home:FC = () => {
   const [countries,setCountries] = useState(null)
+  const [loading,setLoading] = useState(true)
   useEffect(() => {
-    getCountries().then(setCountries)
+    setLoading(true)
+    getCountries().then((data) => {
+      setCountries(data)
+    }).then(() => {
+      setLoading(false)
+    })
   },[])
   console.log(countries)
   return (
@@ -26,9 +32,22 @@ const Home:FC = () => {
           justifyContent: "center",
         }}
       >
-        {countries?.map((data) => (
+        {!loading? countries?.map((data) => (
           <FlagCard countryName={data.name.common}image={data.flags.png} region={data.region} population={data.population}/>
-        ))}
+         )) : (
+         <>
+          <Skeleton width="260px" height="260px" margin="var(--space-1)"/>
+          <Skeleton width="260px" height="260px" margin="var(--space-1)"/>
+          <Skeleton width="260px" height="260px" margin="var(--space-1)"/>
+          <Skeleton width="260px" height="260px" margin="var(--space-1)"/>
+          <Skeleton width="260px" height="260px" margin="var(--space-1)"/>
+          <Skeleton width="260px" height="260px" margin="var(--space-1)"/>
+          <Skeleton width="260px" height="260px" margin="var(--space-1)"/>
+          <Skeleton width="260px" height="260px" margin="var(--space-1)"/>
+         </>
+         ) 
+          }
+  
       </div>
     </div>
   );
