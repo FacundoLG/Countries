@@ -4,7 +4,7 @@ import DropSelector from '../DropSelector/DropSelector'
 import SearchImput from '../SearchImput/SearchImput'
 import {FiSearch} from "react-icons/fi"
 const CountryFinder:FC = () => {
-    const Continents = ["Global","America","Europe","Africa","Asia","Australia"]
+    const Continents = ["All","America","Europe","Africa","Asia","Australia"]
     const [clickID,setClickID] = useState()
     useEffect(() => {
         document.addEventListener("click",sendClickID)

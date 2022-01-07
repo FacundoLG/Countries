@@ -8,10 +8,12 @@ import Skeleton from "../components/Skeleton/Skeleton";
 const Home:FC = () => {
   const [countries,setCountries] = useState(null)
   const [loading,setLoading] = useState(true)
+  const [textInputValue,setTextInputValue] = useState()
   useEffect(() => {
     setLoading(true)
     getCountries().then((data) => {
-      setCountries(data)
+      console.log(data)
+      setCountries(data.data)
     }).then(() => {
       setLoading(false)
     })
@@ -33,7 +35,7 @@ const Home:FC = () => {
         }}
       >
         {!loading? countries?.map((data) => (
-          <FlagCard countryName={data.name.common}image={data.flags.png} region={data.region} population={data.population}/>
+          <FlagCard key={data.name.common + "__"} countryName={data.name.common}image={data.flags.png} region={data.region} population={data.population}/>
          )) : (
          <>
           <Skeleton width="260px" height="260px" margin="var(--space-1)"/>

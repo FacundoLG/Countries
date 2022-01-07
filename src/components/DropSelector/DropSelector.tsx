@@ -10,7 +10,7 @@ interface DropProps {
 
 const DropSelector:FC<DropProps> = ({clickData,options}) => {
   const [dropState,setDropState] = useState<boolean>(false)
-  const [actieOption,setActiveOption] = useState<string>("Global")  
+  const [actieOption,setActiveOption] = useState<string>("All")  
   useEffect(() => {
       if(clickData == "Drop"){
         setDropState(!dropState)
