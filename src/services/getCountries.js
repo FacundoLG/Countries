@@ -1,10 +1,10 @@
 export const getCountries = (name, region) => {
-  let conroler = new AbortController();
+  let controler = new AbortController();
   let URL;
   const baseURL = "https://restcountries.com/v3.1/";
   if (name) {
     URL = baseURL + "name/" + name;
-  } else if (region && region !== "all") {
+  } else if (region && region !== "All") {
     URL = baseURL + "region/" + region;
   } else {
     URL = baseURL + "all";
@@ -12,11 +12,11 @@ export const getCountries = (name, region) => {
 
   return new Promise((resolve, reject) => {
     fetch(URL, {
-      signal: conroler.signal,
+      signal: controler.signal,
     })
       .then((res) => res.json())
       .then((data) => {
-        resolve({ data, abort: conroler.abort });
+        resolve({ data, abort: controler.abort });
       });
   });
 };

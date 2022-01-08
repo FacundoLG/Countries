@@ -1,23 +1,33 @@
-import CountryFinder from "../components/CountryFinder/CountryFinder";
 import styles from "./home.module.css";
-import FlagCard from "../components/FlagCard/FlagCard";
 import { FC, useEffect, useState } from "react";
-import ThemeMode from "../components/ThemeMode/ThemeMode";
+import CountryFinder from "../components/CountryFinder/CountryFinder";
 import {getCountries} from "../services/getCountries.js"
+import FlagCard from "../components/FlagCard/FlagCard";
+import ThemeMode from "../components/ThemeMode/ThemeMode";
 import Skeleton from "../components/Skeleton/Skeleton";
+import SearchImput from "../components/SearchImput/SearchImput";
+import DropSelector from "../components/DropSelector/DropSelector";
+import { FiSearch } from "react-icons/fi";
 const Home:FC = () => {
+  const Continents = ["All","America","Europe","Africa","Asia","Australia"]
   const [countries,setCountries] = useState(null)
   const [loading,setLoading] = useState(true)
-  const [textInputValue,setTextInputValue] = useState()
-  useEffect(() => {
+  const [textInputValue,setTextInputValue] = useState<string>()
+  const [optionValue,setOptionValue] = useState<string>()
+  
+  const handleGetCountries = (name?:string,region?:string) => {
     setLoading(true)
-    getCountries().then((data) => {
-      console.log(data)
+    getCountries(name,region || null).then((data) => {
       setCountries(data.data)
     }).then(() => {
       setLoading(false)
     })
-  },[])
+  }
+  useEffect(() => {
+        handleGetCountries(textInputValue,optionValue)
+  },[textInputValue,optionValue])
+
+
   console.log(countries)
   return (
     <div className={styles.Container}>
@@ -25,7 +35,10 @@ const Home:FC = () => {
         <h1>Countries</h1>
         <ThemeMode/>
       </header>
-      <CountryFinder />
+      <CountryFinder>
+         <SearchImput SendText={(value) => {setTextInputValue(value)}} Icon={<FiSearch/>}/>
+              <DropSelector SendOption={(option => setOptionValue(option))} options={Continents}/> 
+      </CountryFinder>
       <div
       className={styles.CardContainer}
         style={{

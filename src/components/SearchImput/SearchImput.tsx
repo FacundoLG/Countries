@@ -1,8 +1,8 @@
-import {FC} from "react"
+import {FC, useEffect, useState} from "react"
 import styles from "./searchimput.module.css"
 
 interface Props {
-  SendText?: () => void,
+  SendText?: (value:string) => void,
   placeHolder?: string,
   theme?: string
   Icon?: any
@@ -11,10 +11,19 @@ interface Props {
 }
 
 const SearchImput:FC<Props> = ({SendText, placeHolder, Icon,value, readOnly}) => {
+  const [inputText,setInputText] = useState<string>()
+  useEffect(() => {
+    const inputTimeOut = setTimeout(() => {
+      SendText(inputText)
+    },500)
+    return () => {
+      clearInterval(inputTimeOut)
+    }
+  },[inputText])
   return (
     <div className={styles.Container}>
       <i> {Icon} </i>
-      <input value={value} readOnly={readOnly} type="text" placeholder={placeHolder} />
+      <input value={value} readOnly={readOnly} type="text" placeholder={placeHolder} onChange={(e) => {setInputText(e.target.value)}} />
     </div>
   );
 };
