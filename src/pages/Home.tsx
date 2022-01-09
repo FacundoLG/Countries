@@ -32,8 +32,6 @@ const Home:FC = () => {
         handleGetCountries(textInputValue,optionValue)
   },[textInputValue,optionValue])
 
-
-  console.log(countries)
   return (
     <div className={styles.Container}>
       <header className={styles.Header}>
@@ -52,19 +50,23 @@ const Home:FC = () => {
           justifyContent: "center",
         }}
       >
-        {!loading? countries? countries?.map((data) => (
-          <FlagCard key={data.name.common + "__"} countryName={data.name.common}image={data.flags.png} region={data.region} population={data.population}/>
-         )) : (<h1>Not found</h1> ) : (
-         <>
-          <Skeleton width="260px" height="260px" margin="var(--space-1)"/>
-          <Skeleton width="260px" height="260px" margin="var(--space-1)"/>
-          <Skeleton width="260px" height="260px" margin="var(--space-1)"/>
-          <Skeleton width="260px" height="260px" margin="var(--space-1)"/>
-          <Skeleton width="260px" height="260px" margin="var(--space-1)"/>
-          <Skeleton width="260px" height="260px" margin="var(--space-1)"/>
-          <Skeleton width="260px" height="260px" margin="var(--space-1)"/>
-          <Skeleton width="260px" height="260px" margin="var(--space-1)"/>
-         </>
+        {!loading? 
+          countries? 
+            countries?.map((data) => (
+            <FlagCard key={data.name.common + "__"} countryName={data.name.common}image={data.flags.png} region={data.region} population={data.population}/>
+            )) : 
+            (<p>Not found</p>) 
+          : (
+          <>
+            <Skeleton width="260px" height="260px" margin="var(--space-1)"/>
+            <Skeleton width="260px" height="260px" margin="var(--space-1)"/>
+            <Skeleton width="260px" height="260px" margin="var(--space-1)"/>
+            <Skeleton width="260px" height="260px" margin="var(--space-1)"/>
+            <Skeleton width="260px" height="260px" margin="var(--space-1)"/>
+            <Skeleton width="260px" height="260px" margin="var(--space-1)"/>
+            <Skeleton width="260px" height="260px" margin="var(--space-1)"/>
+            <Skeleton width="260px" height="260px" margin="var(--space-1)"/>
+          </>
          ) 
           }
   

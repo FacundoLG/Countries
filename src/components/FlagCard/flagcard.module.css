@@ -10,7 +10,6 @@
 .Flag {
   min-height: 140px;
   width: 100%;
-  background: cyan;
   object-fit: cover;
 }
 .Data {
