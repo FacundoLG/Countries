@@ -9,7 +9,7 @@ import SearchImput from "../components/SearchImput/SearchImput";
 import DropSelector from "../components/DropSelector/DropSelector";
 import { FiSearch } from "react-icons/fi";
 const Home:FC = () => {
-  const Continents = ["All","America","Europe","Africa","Asia","Australia"]
+  const Continents = ["All","America","Europe","Africa","Asia","Oceania"]
   const [countries,setCountries] = useState(null)
   const [loading,setLoading] = useState(true)
   const [textInputValue,setTextInputValue] = useState<string>()
@@ -18,8 +18,13 @@ const Home:FC = () => {
   const handleGetCountries = (name?:string,region?:string) => {
     setLoading(true)
     getCountries(name,region || null).then((data) => {
-      setCountries(data.data)
+      if(data.data.status == 404) {
+        setCountries(null)
+        throw new Error(data.data.message)}
+      setCountries(data?.data)
     }).then(() => {
+      setLoading(false)
+    }).catch(() => {
       setLoading(false)
     })
   }
@@ -47,9 +52,9 @@ const Home:FC = () => {
           justifyContent: "center",
         }}
       >
-        {!loading? countries?.map((data) => (
+        {!loading? countries? countries?.map((data) => (
           <FlagCard key={data.name.common + "__"} countryName={data.name.common}image={data.flags.png} region={data.region} population={data.population}/>
-         )) : (
+         )) : (<h1>Not found</h1> ) : (
          <>
           <Skeleton width="260px" height="260px" margin="var(--space-1)"/>
           <Skeleton width="260px" height="260px" margin="var(--space-1)"/>
