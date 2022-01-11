@@ -17,8 +17,9 @@ const Country = () => {
                 <img src={countryInfo?.flags?.png} alt="" />
                 <div>
                     <p className={styles.Title}>{countryInfo?.name?.common}</p>
-                    <p>Population: {countryInfo?.population}</p>
+                    <p>Population: {countryInfo?.population} </p>
                     <p>Timezones: {countryInfo?.timezones }</p>
+                    <p>Demonyms: {countryInfo?.demonyms?.eng?.f} / {countryInfo?.demonyms?.eng?.m}</p>
                     <a href={"https://en.wikipedia.org/wiki/"+ countryInfo?.name?.common} target="_blank">More Info</a>
                 </div>
             </div>
