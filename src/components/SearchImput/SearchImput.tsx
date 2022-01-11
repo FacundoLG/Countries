@@ -11,7 +11,7 @@ interface Props {
 }
 
 const SearchImput:FC<Props> = ({SendText, placeHolder, Icon,value, readOnly}) => {
-  const [inputText,setInputText] = useState<string>()
+  const [inputText,setInputText] = useState<string>("")
   useEffect(() => {
     const inputTimeOut = setTimeout(() => {
       SendText(inputText)

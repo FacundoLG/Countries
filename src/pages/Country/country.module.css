@@ -1,0 +1,27 @@
+.FlagContainer {
+  display: flex;
+  margin: var(--space-1);
+  flex-wrap: wrap;
+}
+.FlagContainer > img {
+  width: 300px;
+  height: auto;
+  object-fit: contain;
+  margin: 0 0 var(--space-2) 0;
+}
+.FlagContainer > div {
+  margin: 0 var(--space-3);
+  font-size: 18px;
+  font-weight: 300;
+}
+.FlagContainer > div > p {
+  margin: var(--space-2) 0;
+}
+.FlagContainer > div > .Title {
+  font-size: 30px;
+  font-weight: 400;
+  margin: 0 0 var(--space-3) 0;
+}
+.FlagContainer a {
+  color: cyan;
+}
