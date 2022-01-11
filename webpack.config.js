@@ -52,5 +52,8 @@ module.exports = (argx, env) => {
       ],
     },
     devtool: isProduction ? false : "source-map",
+    devServer: {
+      historyApiFallback: true,
+    },
   };
 };

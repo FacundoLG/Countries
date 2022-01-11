@@ -2,10 +2,13 @@
   display: flex;
   flex-direction: column;
   height: 260px;
+  width: 260px;
   max-width: 260px;
   background-color: var(--hover-color);
   margin: var(--space-1);
   border-radius: 2px;
+  color: var(--secondary-color);
+  text-decoration: none;
 }
 .Flag {
   min-height: 140px;

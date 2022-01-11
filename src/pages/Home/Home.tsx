@@ -1,15 +1,14 @@
 import styles from "./home.module.css";
 import { FC, useEffect, useState } from "react";
-import CountryFinder from "../components/CountryFinder/CountryFinder";
-import {getCountries} from "../services/getCountries.js"
-import FlagCard from "../components/FlagCard/FlagCard";
-import ThemeMode from "../components/ThemeMode/ThemeMode";
-import Skeleton from "../components/Skeleton/Skeleton";
-import SearchImput from "../components/SearchImput/SearchImput";
-import DropSelector from "../components/DropSelector/DropSelector";
+import CountryFinder from "../../components/CountryFinder/CountryFinder";
+import {getCountries} from "../../services/getCountries.js"
+import FlagCard from "../../components/FlagCard/FlagCard";
+import Skeleton from "../../components/Skeleton/Skeleton";
+import SearchImput from "../../components/SearchImput/SearchImput";
+import DropSelector from "../../components/DropSelector/DropSelector";
 import { FiSearch } from "react-icons/fi";
 const Home:FC = () => {
-  const Continents = ["All","America","Europe","Africa","Asia","Oceania"]
+  const Continents = ["All","Americas","Europe","Africa","Asia","Oceania"]
   const [countries,setCountries] = useState(null)
   const [loading,setLoading] = useState(true)
   const [textInputValue,setTextInputValue] = useState<string>()
@@ -34,10 +33,7 @@ const Home:FC = () => {
 
   return (
     <div className={styles.Container}>
-      <header className={styles.Header}>
-        <h1>Countries</h1>
-        <ThemeMode/>
-      </header>
+ 
       <CountryFinder>
          <SearchImput SendText={(value) => {setTextInputValue(value)}} Icon={<FiSearch/>}/>
               <DropSelector SendOption={(option => setOptionValue(option))} options={Continents}/> 

@@ -1,9 +1,9 @@
-export const getCountries = (name, region) => {
+export const getCountries = (name, region, fullname) => {
   let controler = new AbortController();
   let URL;
   const baseURL = "https://restcountries.com/v3.1/";
   if (name) {
-    URL = baseURL + "name/" + name;
+    URL = baseURL + "name/" + name + (fullname ? "?fullText=true" : "");
   } else if (region && region !== "All") {
     URL = baseURL + "region/" + region;
   } else {
