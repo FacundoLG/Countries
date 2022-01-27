@@ -7,7 +7,6 @@ const Country:FC = () => {
     const {flag} = useParams()
     useEffect(() => {
         getCountries(flag,"All",true).then((data) => {
-            console.log(data.data[0])
             setCountryInfo(data.data[0])
         })
     },[])

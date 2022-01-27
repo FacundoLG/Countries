@@ -10,8 +10,7 @@ const ThemeMode:FC = () => {
         localStorage.setItem("theme", themeMode)
     },[themeMode])
     
-    const changeThemeMode = () => {
-        console.log("click")
+const changeThemeMode = () => {
         setThemeMode(themeMode === "light"? "dark": "light")
     }
     return (
